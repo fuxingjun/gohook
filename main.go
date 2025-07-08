@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 
 	"github.com/fuxingjun/hookgo/app/route"
@@ -34,6 +35,13 @@ func main() {
 
 	SetupRoutes(app)
 
-	// 启动服务器在 15492 端口
-	app.Listen(":15492")
+	port := flag.Int("port", 15492, "port")
+	flag.Parse() // ✅ 必须调用以解析命令行参数
+
+	addr := fmt.Sprintf(":%d", *port)
+	// 启动服务器在 指定 端口
+	fmt.Printf("Listening on %s\n", addr)
+	if err := app.Listen(addr); err != nil {
+		fmt.Printf("listen failed: %v\n", err)
+	}
 }

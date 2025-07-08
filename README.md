@@ -26,6 +26,9 @@
 # 后台运行程序
 nohup ./release/hookgo_linux_arm64 > logs/hookgo.out 2>&1 &
 
+# 支持指定端口, 默认 15492
+./release/hookgo_linux_arm64 -port=8082
+
 # 启动程序后测试
 curl -X POST -H "Content-Type: application/json" \
 -d '{"msg_type":"text","content":{"text":"test message\nhello lark"}}' \

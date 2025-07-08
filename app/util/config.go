@@ -2,6 +2,7 @@ package util
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"sync"
 )
@@ -55,6 +56,7 @@ func ReadConfig(configPath string) *[]ConfigItem {
 	}
 	if !PathExists(configPath) {
 		// 新建示例文件
+		fmt.Println("Config not found, creating one...")
 		newEmptyConfig()
 		os.Exit(1)
 	}

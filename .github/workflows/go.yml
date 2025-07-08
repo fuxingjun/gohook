@@ -1,0 +1,43 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*' # 当推送以 'v' 开头的标签时触发
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Go 1.23
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.23'
+
+    - name: Install dependencies (可选)
+      run: go mod download
+
+    - name: Run build scripts
+      run: |
+        TAG_NAME=${GITHUB_REF#refs/tags/}
+        chmod +x build.sh
+        ./build.sh $TAG_NAME
+        
+    - name: List release artifacts
+      run: ls -la release/
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        # name 设置 Release 名称，默认为 tag 名 ref:refs/tags/v0.0.2 ref_name:v0.0.2
+        name: Release ${{ github.ref_name }}
+        tag_name: ${{ github.ref_name }}
+        files: release/*
+        draft: false
+        prerelease: ${{ contains(github.ref, '-pre') }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,10 @@
+### post message
+POST {{host}}/hook/lark?key=your-custom-key
+Content-Type: application/json
+
+{
+  "msg_type": "text",
+  "content": {
+    "text": "test message\nhello lark"
+  }
+}

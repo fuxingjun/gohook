@@ -3,7 +3,7 @@ package service
 import (
 	"fmt"
 
-	"github.com/fuxingjun/gohook/app/util"
+	"github.com/fuxingjun/hookgo/app/util"
 	"github.com/gofiber/fiber/v2"
 )
 

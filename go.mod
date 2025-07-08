@@ -1,4 +1,4 @@
-module github.com/fuxingjun/gohook
+module github.com/fuxingjun/hookgo
 
 go 1.23.5
 

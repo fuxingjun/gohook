@@ -1,4 +1,4 @@
-# gohook
+# hookgo
 一个简单的webhook转发工具
 
 
@@ -24,7 +24,7 @@
 
 ```bash
 # 后台运行程序
-nohup ./release/gohook_linux_arm64 > logs/gohook.out 2>&1 &
+nohup ./release/hookgo_linux_arm64 > logs/hookgo.out 2>&1 &
 
 # 启动程序后测试
 curl -X POST -H "Content-Type: application/json" \

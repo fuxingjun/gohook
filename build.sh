@@ -2,7 +2,7 @@
 
 OUTPUT_DIR="release"
 APP_ENTRY="main.go"
-APP_NAME="gohook"
+APP_NAME="hookgo"
 VERSION=\"$1\"
 
 mkdir -p $OUTPUT_DIR

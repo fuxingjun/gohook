@@ -1,1 +1,1 @@
-nohup ./release/gohook_linux_arm64 > logs/gohook.out 2>&1 &
+nohup ./release/hookgo_linux_arm64 > logs/hookgo.out 2>&1 &

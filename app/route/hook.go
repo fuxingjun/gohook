@@ -1,7 +1,7 @@
 package route
 
 import (
-	"github.com/fuxingjun/gohook/app/service"
+	"github.com/fuxingjun/hookgo/app/service"
 	"github.com/gofiber/fiber/v2"
 )
 

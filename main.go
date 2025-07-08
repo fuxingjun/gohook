@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/fuxingjun/gohook/app/route"
-	"github.com/fuxingjun/gohook/app/util"
+	"github.com/fuxingjun/hookgo/app/route"
+	"github.com/fuxingjun/hookgo/app/util"
 	fiber "github.com/gofiber/fiber/v2"
 )
 

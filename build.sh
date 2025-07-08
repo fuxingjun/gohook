@@ -22,7 +22,7 @@ GOOS=linux GOARCH=arm64 go build -o ${OUTPUT_DIR}/${APP_NAME}_linux_arm64 \
     ${APP_ENTRY}
 
 # 构建 macOS m系列
-GOOS=darwin GOARCH=arm64 go build -o ${OUTPUT_DIR}/${APP_NAME}_darwin_amd64 \
+GOOS=darwin GOARCH=arm64 go build -o ${OUTPUT_DIR}/${APP_NAME}_darwin_arm64 \
     -ldflags "-s -w \
     -X 'main.version=${VERSION}' \
     -X 'main.date=$(date +%Y-%m-%d.%H:%M)'" \
